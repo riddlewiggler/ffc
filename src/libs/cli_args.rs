@@ -1,0 +1,54 @@
+use clap::Parser;
+
+/// Fun with Forty Client
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None, styles=get_styles())]
+pub struct Args {
+    /// Browser[s] to clean
+    #[arg(short, long, num_args = 0..3, value_delimiter = ' ', default_values_t = ["Chrome".to_string(), "Firefox".to_string()])]
+    pub browser: Vec<String>,
+}
+
+// @see https://stackoverflow.com/a/76916424/2816883
+pub fn get_styles() -> clap::builder::Styles {
+    clap::builder::Styles::styled()
+        .usage(
+            anstyle::Style::new()
+                .bold()
+                .underline()
+                .fg_color(Some(anstyle::Color::Ansi(anstyle::AnsiColor::Yellow))),
+        )
+        .header(
+            anstyle::Style::new()
+                .bold()
+                .underline()
+                .fg_color(Some(anstyle::Color::Ansi(anstyle::AnsiColor::Yellow))),
+        )
+        .literal(
+            anstyle::Style::new().fg_color(Some(anstyle::Color::Ansi(anstyle::AnsiColor::Green))),
+        )
+        .invalid(
+            anstyle::Style::new()
+                .bold()
+                .fg_color(Some(anstyle::Color::Ansi(anstyle::AnsiColor::Red))),
+        )
+        .error(
+            anstyle::Style::new()
+                .bold()
+                .fg_color(Some(anstyle::Color::Ansi(anstyle::AnsiColor::Red))),
+        )
+        .valid(
+            anstyle::Style::new()
+                .bold()
+                .underline()
+                .fg_color(Some(anstyle::Color::Ansi(anstyle::AnsiColor::Green))),
+        )
+        .placeholder(
+            anstyle::Style::new().fg_color(Some(anstyle::Color::Ansi(anstyle::AnsiColor::White))),
+        )
+}
+
+
+#[cfg(test)]
+#[path = "./__tests__/cli_args.spec.rs"]
+mod cli_args_test;
