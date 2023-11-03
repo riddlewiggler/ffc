@@ -1,0 +1,2 @@
+[alias]
+coverage = "llvm-cov nextest --test-threads 1 --ignore-filename-regex spec.rs"
