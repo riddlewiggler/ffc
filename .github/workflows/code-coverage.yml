@@ -2,7 +2,11 @@ name: coverage
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - 'feature/**'
+      - 'release/**'
+      - 'develop'
+      - 'master'
   pull_request:
     branches: [ "main" ]
 
