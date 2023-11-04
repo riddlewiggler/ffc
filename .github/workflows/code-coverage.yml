@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout repo- name: checkout repo
+      - name: checkout repo- name
         uses: actions/checkout@v4
       - name: Install cargo-nextest and cargo-llvm-cov
         uses: taiki-e/install-action@v2
