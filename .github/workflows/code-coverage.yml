@@ -14,12 +14,17 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  test-coverage:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Run code coverage
-      # run: cargo coverage
-      run: cargo test -- --test-threads=1
+      - name: checkout repo- name: checkout repo
+        uses: actions/checkout@v4
+      - name: Install cargo-nextest and cargo-llvm-cov
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-nextest,cargo-llvm-cov      
+      - name: Run test coverage
+        # run: cargo coverage
+        run: cargo test -- --test-threads=1
