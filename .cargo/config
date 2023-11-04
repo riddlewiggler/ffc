@@ -1,2 +1,3 @@
 [alias]
 coverage = "llvm-cov nextest --test-threads 1 --ignore-filename-regex spec.rs"
+generate-lcov = "llvm-cov nextest --test-threads 1 --ignore-filename-regex spec.rs --lcov --output-path lcov.info"
