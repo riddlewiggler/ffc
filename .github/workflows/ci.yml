@@ -81,4 +81,4 @@ jobs:
         if: steps.coverage.outcome == 'success'
         verbose: true
         with:
-          files: lcov.info        
+          files: lcov.info
