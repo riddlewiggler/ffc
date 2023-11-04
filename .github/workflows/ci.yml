@@ -11,7 +11,11 @@ on:
     branches: [ "main" ]
 
 env:
+  CARGO_INCREMENTAL: false
   CARGO_TERM_COLOR: always
+  RUST_LOG: info
+  RUST_BACKTRACE: full
+  REPO_MSRV: "1.70"
 
 jobs:
   test-coverage:
@@ -26,6 +30,9 @@ jobs:
         uses: taiki-e/install-action@v2
         with:
           tool: cargo-nextest,cargo-llvm-cov
+          
+      - name: caching
+        uses: Swatinem/rust-cache@v2
           
       - name: Run tests
         shell: bash
