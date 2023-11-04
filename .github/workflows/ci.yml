@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout repo- name
+      - name: Checkout this repo
         uses: actions/checkout@v4
 
       - name: Install cargo-nextest and cargo-llvm-cov
