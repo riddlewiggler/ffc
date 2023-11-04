@@ -46,7 +46,8 @@ jobs:
           cargo coverage
 
   generate-lcov:
-    name: Test coverage report
+    name: Generate line coverage
+    needs: test-coverage
     runs-on: ubuntu-latest
 
     steps:
