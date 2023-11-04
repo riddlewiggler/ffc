@@ -76,9 +76,9 @@ jobs:
 
       - name: Upload coverage report to codecov
         uses: codecov/codecov-action@v3
+        if: steps.coverage.outcome == 'success'
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: lcov.info
           fail_ci_if_error: true
-          if: steps.coverage.outcome == 'success'
           verbose: true
