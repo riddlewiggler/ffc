@@ -1,4 +1,4 @@
-name: coverage
+name: Continuous integration
 
 on:
   push:
@@ -15,16 +15,21 @@ env:
   CARGO_TERM_COLOR: always
   RUST_LOG: info
   RUST_BACKTRACE: full
-  REPO_MSRV: "1.70"
+  REPO_MSRV: "1.72"
 
 jobs:
   test-coverage:
-
+    name: Test coverage report
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v4
+
+      - name: Install Repo MSRV toolchain
+        run: |
+          rustup toolchain install ${{ env.REPO_MSRV }} --no-self-update --profile=minimal -c llvm-tools
+          cargo -V        
 
       - name: Install cargo-nextest and cargo-llvm-cov
         uses: taiki-e/install-action@v2
@@ -34,13 +39,34 @@ jobs:
       - name: caching
         uses: Swatinem/rust-cache@v2
           
-      - name: Run tests
+      - name: Generate coverage report
         shell: bash
         run: |
           set -e
-          cargo test -- --test-threads=1
+          cargo coverage
 
-      - name: Generate coverage report
+  generate-lcov:
+    name: Test coverage report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Install Repo MSRV toolchain
+        run: |
+          rustup toolchain install ${{ env.REPO_MSRV }} --no-self-update --profile=minimal -c llvm-tools
+          cargo -V        
+
+      - name: Install cargo-nextest and cargo-llvm-cov
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-nextest,cargo-llvm-cov
+          
+      - name: caching
+        uses: Swatinem/rust-cache@v2          
+
+      - name: Generate line coverage file
         run: |
           set -e
           cargo generate-lcov
