@@ -6,7 +6,7 @@ on:
       - 'feature/**'
       - 'release/**'
       - 'develop'
-      - 'master'
+      - 'main'
   pull_request:
     branches: [ "main" ]
 
@@ -20,7 +20,7 @@ env:
 jobs:
   test-coverage:
     name: Test coverage report
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout this repo
@@ -48,7 +48,8 @@ jobs:
   generate-lcov:
     name: Generate line coverage
     needs: test-coverage
-    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout this repo
@@ -81,4 +82,4 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: lcov.info
           fail_ci_if_error: true
-          verbose: true
+          verbose: false
