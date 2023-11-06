@@ -1,0 +1,48 @@
+name: build
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'release/**'
+      - 'develop'
+      - 'main'
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_INCREMENTAL: false
+  CARGO_TERM_COLOR: always
+  RUST_LOG: info
+  RUST_BACKTRACE: full
+  REPO_MSRV: "1.72"
+
+jobs:
+  test-coverage:
+    name: Build the executable
+    strategy:
+      matrix:    
+        os: [ubuntu-20.04, ubuntu-22.04]
+      runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Install Repo MSRV toolchain
+        run: |
+          rustup toolchain install ${{ env.REPO_MSRV }} --no-self-update --profile=minimal -c llvm-tools
+          cargo -V        
+
+      - name: Build
+        id: build
+        shell: bash
+        run: |
+          set -e
+          cargo build --release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        if: steps.build.outcome == 'success'
+        with:
+          name: ffc ${{ matrix.os }}
+          path: target/release/ffc
