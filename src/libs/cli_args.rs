@@ -2,7 +2,7 @@ use clap::Parser;
 
 const ABOUT: &str = r#"
 Fun with Forty Client (ffc for brevity) cleans the certificate authority files
-(pkcs11.txt) used by your browsers and polluted by Forty Client."#;
+(pkcs11.txt) used by your browsers and polluted by Forty Client"#;
 
 /// Fun with Forty Client
 #[derive(Parser, Debug)]
