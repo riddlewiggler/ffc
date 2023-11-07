@@ -6,7 +6,7 @@
 ## TL;DR
 
 Use this [CLI][CLI] tool to clean the certificate authority files
-([PKCS11][PKCS11]) used by your browsers and _polluted_ by Forty Client.
+([pkcs11.txt][PKCS11]) used by your browsers and _polluted_ by Forty Client.
 
 ## Description
 
@@ -15,8 +15,8 @@ used by some browsers by appending an additional authority. This turns out to
 be a major drag for the browsing performances. In particular during a cold
 start the first page fetch takes ages, ending up in a failure.
 
-Fun with Forty Client (`ffc` for brevity) can clean the certificate authority
-files ([PKCS11][PKCS11]) used by your browsers and _polluted_ by Forty Client.
+Fun with Forty Client (`ffc` for brevity) cleans the certificate authority
+files ([pkcs11.txt][PKCS11]) used by your browsers and _polluted_ by Forty Client.
 
 ## Usage
 
