@@ -2,13 +2,8 @@ name: build
 
 on:
   push:
-    branches:
-      - 'feature/**'
-      - 'release/**'
-      - 'develop'
-      - 'main'
-  pull_request:
-    branches: [ "main" ]
+    tags:
+      - "*"
 
 env:
   CARGO_INCREMENTAL: false
@@ -22,7 +17,7 @@ jobs:
     name: Build the executable
     runs-on: ${{ matrix.os }}
     strategy:
-      matrix:    
+      matrix:
         os: [ubuntu-20.04, ubuntu-22.04]
     steps:
       - name: Checkout this repo
@@ -31,7 +26,8 @@ jobs:
       - name: Install Repo MSRV toolchain
         run: |
           rustup toolchain install ${{ env.REPO_MSRV }} --no-self-update --profile=minimal -c llvm-tools
-          cargo -V        
+          cargo -V
+          ldd --version | head -n1
 
       - name: Build
         id: build
@@ -44,5 +40,6 @@ jobs:
         uses: actions/upload-artifact@v3
         if: steps.build.outcome == 'success'
         with:
-          name: ffc ${{ matrix.os }}
+          name: ffc-for-${{ matrix.os }}
           path: target/release/ffc
+          retention-days: 5
