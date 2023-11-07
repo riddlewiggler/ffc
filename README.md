@@ -20,7 +20,7 @@ files ([PKCS11][PKCS11]) used by your browsers and _polluted_ by Forty Client.
 
 ## Usage
 
-Basic usage. This will clean both Firefox and Chrome:
+This will clean both Firefox and Chrome:
 
 ```bash
 ffc
