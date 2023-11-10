@@ -1,6 +1,6 @@
 # Fun with Forty Client
 
-[![CI](https://github.com/riddlewiggler/ffc/actions/workflows/main.yml/badge.svg)](https://github.com/riddlewiggler/ffc/actions/workflows/main.yml)
+[![CI](https://github.com/riddlewiggler/ffc/actions/workflows/ci-main.yml/badge.svg)](https://github.com/riddlewiggler/ffc/actions/workflows/ci-main.yml)
 [![codecov](https://codecov.io/gh/riddlewiggler/ffc/graph/badge.svg?token=5R70R73WK8)](https://codecov.io/gh/riddlewiggler/ffc)
 
 ## TL;DR
