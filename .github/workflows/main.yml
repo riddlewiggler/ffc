@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  call-test:
+    uses: ./.github/workflows/reusables/test.yml
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]
+    with:
+      target-os: ${{ matrix.os }}
+      rust-version: ${{ vars.RUST_VERSION }}
+  # TODO audit
+  call-coverage:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]
+    uses: ./.github/workflows/reusables/coverage.yml
+    with:
+      target-os: ${{ matrix.os }}
+      rust-version: ${{ vars.RUST_VERSION }}
+  call-release:
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, ubuntu-22.04]
+    uses: ./.github/workflows/reusables/release.yml
+    with:
+      target-os: ${{ matrix.os }}
+      rust-version: ${{ vars.RUST_VERSION }}

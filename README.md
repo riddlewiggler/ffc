@@ -50,6 +50,11 @@ Print version and exit:
 ffc -V
 ```
 
+TODO
+## Limitations
+
+Current logged user home folder
+
 ## Supported platforms
 
 Currently only Linux distributions are supported:
