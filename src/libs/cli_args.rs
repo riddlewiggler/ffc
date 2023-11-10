@@ -13,7 +13,9 @@ pub struct Args {
     pub browser: Vec<String>,
 }
 
-// @see https://stackoverflow.com/a/76916424/2816883
+/// Generate the styles for helper output of clap
+/// 
+/// [info](https://stackoverflow.com/a/76916424/2816883)
 pub fn get_styles() -> clap::builder::Styles {
     clap::builder::Styles::styled()
         .usage(
