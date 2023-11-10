@@ -8,7 +8,8 @@ on:
     branches: ["main"]
 
 jobs:
-  call-test:
+  test:
+    name: Run tests
     uses: ./.github/workflows/reusable-test.yml
     strategy:
       matrix:
@@ -17,19 +18,13 @@ jobs:
       target-os: ${{ matrix.os }}
       rust-version: ${{ vars.RUST_VERSION }}
   # TODO audit
-  call-coverage:
+  coverage:
+    name: Coverage
+    needs: test
     strategy:
       matrix:
         os: [ubuntu-22.04]
     uses: ./.github/workflows/reusable-coverage.yml
-    with:
-      target-os: ${{ matrix.os }}
-      rust-version: ${{ vars.RUST_VERSION }}
-  call-release:
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, ubuntu-22.04]
-    uses: ./.github/workflows/reusable-release.yml
     with:
       target-os: ${{ matrix.os }}
       rust-version: ${{ vars.RUST_VERSION }}
