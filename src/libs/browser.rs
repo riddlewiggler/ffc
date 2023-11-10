@@ -9,6 +9,7 @@ pub enum Browser {
 }
 
 impl fmt::Display for Browser {
+    /// Format the Browser Enum as string
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
             Browser::Chrome => write!(f, "Chrome"),
