@@ -1,0 +1,47 @@
+name: release
+
+on:
+  workflow_call:
+    inputs:
+      target-os:
+        required: true
+        type: string
+      rust-version:
+        required: true
+        type: string
+
+env:
+  CARGO_INCREMENTAL: false
+  CARGO_TERM_COLOR: always
+  RUST_LOG: info
+  RUST_BACKTRACE: full
+
+jobs:
+  build-and-upload:
+    name: Build
+    runs-on: ${{ inputs.target-os }}
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Install Repo MSRV toolchain
+        run: |
+          rustup toolchain install ${{ inputs.rust-version }} \
+            --no-self-update --profile=minimal -c llvm-tools
+          cargo -V
+          ldd --version | head -n1
+
+      - name: Cargo build
+        id: build
+        shell: bash
+        run: |
+          set -e
+          cargo build --release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        if: steps.build.outcome == 'success'
+        with:
+          name: ffc-for-${{ inputs.target-os }}
+          path: target/release/ffc
+          retention-days: 5
