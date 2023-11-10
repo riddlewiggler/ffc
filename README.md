@@ -50,10 +50,10 @@ Print version and exit:
 ffc -V
 ```
 
-TODO
 ## Limitations
 
-Current logged user home folder
+It is intended to be used by the current logged-in Linux user, since the
+certificate authority files are located by default in the user's home folder.
 
 ## Supported platforms
 
