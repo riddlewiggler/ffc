@@ -1,15 +1,21 @@
 use clap::Parser;
 
+const ABOUT: &str = r#"
+Fun with Forty Client (ffc for brevity) cleans the certificate authority files
+(pkcs11.txt) used by your browsers and polluted by Forty Client"#;
+
 /// Fun with Forty Client
 #[derive(Parser, Debug)]
-#[command(author, version, about, long_about = None, styles=get_styles())]
+#[command(author, version, about = ABOUT, long_about = None, styles=get_styles())]
 pub struct Args {
     /// Browser[s] to clean
-    #[arg(short, long, num_args = 0..3, value_delimiter = ' ', default_values_t = ["Chrome".to_string(), "Firefox".to_string()])]
+    #[arg(short, long, num_args = 0..3, value_delimiter = ' ', default_values_t = ["chrome".to_string(), "firefox".to_string()])]
     pub browser: Vec<String>,
 }
 
-// @see https://stackoverflow.com/a/76916424/2816883
+/// Generate helper styles for Clap
+/// 
+/// [info](https://stackoverflow.com/a/76916424/2816883)
 pub fn get_styles() -> clap::builder::Styles {
     clap::builder::Styles::styled()
         .usage(

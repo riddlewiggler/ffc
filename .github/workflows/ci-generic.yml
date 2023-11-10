@@ -1,0 +1,21 @@
+name: ci generic
+
+on:
+  push:
+    branches-ignore:
+      - "main"
+    tags-ignore:
+      - "*"
+  pull_request:
+    branches-ignore:
+      - "main"
+
+jobs:
+  call-test:
+    uses: ./.github/workflows/reusable-test.yml
+    strategy:
+      matrix:
+        os: [ubuntu-22.04]    
+    with:
+      target-os: ${{ matrix.os }}
+      rust-version: ${{ vars.RUST_VERSION }}

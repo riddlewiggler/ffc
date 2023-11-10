@@ -1,7 +1,14 @@
 [package]
 name = "ffc"
-version = "0.1.0"
+version = "0.9.0"
 edition = "2021"
+authors = ["riddlewiggler"]
+rust-version = "1.70"
+description = "It cleans the certificate files (PKCS11) used by your browsers"
+homepage = "https://github.com/riddlewiggler/ffc"
+repository = "https://github.com/riddlewiggler/ffc"
+license-file = "LICENSE"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

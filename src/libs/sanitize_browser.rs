@@ -8,7 +8,7 @@ use log::{info, trace};
 /// 
 /// # Arguments
 /// 
-/// * `browser` - Browser enum, namely Chrome and Firefox
+/// * `browser` - Browser enum, namely Chrome or Firefox
 /// * `user_home` - Optional user base folder. Helpful injection during tests
 pub fn sanitize_browser(browser: Browser, user_home: Option<String>) -> Result<bool> {
     trace!("Sanitizing pkcs11.txt for {:?} browser", browser);
