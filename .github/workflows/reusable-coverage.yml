@@ -9,6 +9,10 @@ on:
       rust-version:
         required: true
         type: string
+    secrets:
+      CODECOV_TOKEN:
+        required: true
+
 
 env:
   CARGO_INCREMENTAL: false
