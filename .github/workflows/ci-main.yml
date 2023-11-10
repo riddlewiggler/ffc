@@ -28,3 +28,5 @@ jobs:
     with:
       target-os: ${{ matrix.os }}
       rust-version: ${{ vars.RUST_VERSION }}
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
