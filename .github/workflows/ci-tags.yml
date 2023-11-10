@@ -6,7 +6,8 @@ on:
       - "*"
 
 jobs:
-  call-test:
+  test:
+    name: Run tests
     uses: ./.github/workflows/reusable-test.yml
     strategy:
       matrix:
@@ -14,7 +15,9 @@ jobs:
     with:
       target-os: ${{ matrix.os }}
       rust-version: ${{ vars.RUST_VERSION }}
-  call-release:
+  release:
+    name: Release
+    needs: test
     strategy:
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04]

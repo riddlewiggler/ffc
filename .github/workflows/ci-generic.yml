@@ -11,7 +11,8 @@ on:
       - "main"
 
 jobs:
-  call-test:
+  test:
+    name: Run tests
     uses: ./.github/workflows/reusable-test.yml
     strategy:
       matrix:
