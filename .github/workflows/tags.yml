@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-test:
-    uses: ./.github/workflows/reusables/test.yml
+    uses: ./.github/workflows/reusable-test.yml
     strategy:
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04]    
@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04]
-    uses: ./.github/workflows/reusables/release.yml
+    uses: ./.github/workflows/reusable-release.yml
     with:
       target-os: ${{ matrix.os }}
       rust-version: ${{ vars.RUST_VERSION }}

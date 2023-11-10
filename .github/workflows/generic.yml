@@ -12,7 +12,7 @@ on:
 
 jobs:
   call-test:
-    uses: ./.github/workflows/reusables/test.yml
+    uses: ./.github/workflows/reusable-test.yml
     strategy:
       matrix:
         os: [ubuntu-22.04]    
