@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.x.x] - 2023-xx-xx
 
+## Changed
+
 - (patch) - feature/86bwdfg6p
   - Added EULA in `README.md`
 
