@@ -90,14 +90,14 @@ expectations; or any errors in the Software will be corrected.
 YOU EXPRESSLY UNDERSTAND AND AGREE THAT [riddlewiggler][rw] SHALL NOT BE LIABLE
 FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY
 DAMAGES, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL,
-USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF GITHUB HAS BEEN ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGES) RELATED TO THE SOFTWARE, including, for example:
-the use or the inability to use the Software; the cost of procurement of
-substitute goods and services resulting from any goods, data, information or
-services purchased or obtained or messages received or transactions entered into
-through or from the Software; unauthorized access to or alteration of your
-transmissions or data; statements or conduct of any third-party on the Software;
-or any other matter relating to the Software.
+USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF [riddlewiggler][rw] HAS BEEN
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES) RELATED TO THE SOFTWARE, including,
+for example: the use or the inability to use the Software; the cost of
+procurement of substitute goods and services resulting from any goods, data,
+information or services purchased or obtained or messages received or
+transactions entered into through or from the Software; unauthorized access to
+or alteration of your transmissions or data; statements or conduct of any
+third-party on the Software; or any other matter relating to the Software.
 
 [riddlewiggler][rw] reserves the right at any time and from time to time to
 modify or discontinue, temporarily or permanently, the Software (or any part
