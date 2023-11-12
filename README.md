@@ -79,7 +79,7 @@ Give a ⭐️ if this project helped you
 
 THE SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, AND NO WARRANTY, EITHER EXPRESS OR
 IMPLIED, IS GIVEN. YOUR USE OF THE SOFTWARE IS AT YOUR SOLE RISK.
-[riddlewiggler][rw] does not warrant that the Software will meet your specific
+[RIDDLEWIGGLER][rw] does not warrant that the Software will meet your specific
 requirements; the Software is fully compatible with any particular platform;
 your use of the Software will be uninterrupted, timely, secure, or error-free;
 the results that may be obtained from the use of the Software will be accurate
@@ -87,10 +87,10 @@ or reliable; the quality of any products, services, information, or other
 material purchased or obtained by you through the Software will meet your
 expectations; or any errors in the Software will be corrected.
 
-YOU EXPRESSLY UNDERSTAND AND AGREE THAT [riddlewiggler][rw] SHALL NOT BE LIABLE
+YOU EXPRESSLY UNDERSTAND AND AGREE THAT [RIDDLEWIGGLER][rw] SHALL NOT BE LIABLE
 FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY
 DAMAGES, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL,
-USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF [riddlewiggler][rw] HAS BEEN
+USE, DATA OR OTHER INTANGIBLE LOSSES (EVEN IF [RIDDLEWIGGLER][rw] HAS BEEN
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGES) RELATED TO THE SOFTWARE, including,
 for example: the use or the inability to use the Software; the cost of
 procurement of substitute goods and services resulting from any goods, data,
@@ -99,9 +99,9 @@ transactions entered into through or from the Software; unauthorized access to
 or alteration of your transmissions or data; statements or conduct of any
 third-party on the Software; or any other matter relating to the Software.
 
-[riddlewiggler][rw] reserves the right at any time and from time to time to
+[RIDDLEWIGGLER][rw] reserves the right at any time and from time to time to
 modify or discontinue, temporarily or permanently, the Software (or any part
-thereof) with or without notice. [riddlewiggler][rw] shall not be liable to you
+thereof) with or without notice. [RIDDLEWIGGLER][rw] shall not be liable to you
 or to any third-party for any modification, price change, suspension or
 discontinuance of the Software.
 
