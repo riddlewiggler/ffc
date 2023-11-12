@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Corrected a typo in `README.md`
 - (patch) - feature/86bwdhzfz
   - Uppercased references in `README.md`
+  - Removed some hyperlink references in `README.md`
 
 ## [0.9.2] - 2023-11-11
 
