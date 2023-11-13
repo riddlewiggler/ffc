@@ -12,5 +12,5 @@ pub use cli_args::{Args, get_styles};
 mod sanitize_browser_list;
 pub use sanitize_browser_list::sanitize_browser_list;
 
-mod init_logger;
-pub use init_logger::init_logger;
+mod build_logger;
+pub use build_logger::build_logger;
