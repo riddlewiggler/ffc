@@ -11,10 +11,12 @@ pub struct Args {
     /// Browser[s] to clean
     #[arg(short, long, num_args = 0..3, value_delimiter = ' ', default_values_t = ["chrome".to_string(), "firefox".to_string()])]
     pub browser: Vec<String>,
+    #[arg(short, long, action)]
+    pub verbose: bool,
 }
 
 /// Generate helper styles for Clap
-/// 
+///
 /// [info](https://stackoverflow.com/a/76916424/2816883)
 pub fn get_styles() -> clap::builder::Styles {
     clap::builder::Styles::styled()
@@ -53,7 +55,6 @@ pub fn get_styles() -> clap::builder::Styles {
             anstyle::Style::new().fg_color(Some(anstyle::Color::Ansi(anstyle::AnsiColor::White))),
         )
 }
-
 
 #[cfg(test)]
 #[path = "./__tests__/cli_args.spec.rs"]
