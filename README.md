@@ -26,10 +26,10 @@ This will clean both Firefox and Chrome:
 ffc
 ```
 
-For verbose output, you need to prefix it with `RUST_LOG=trace`:
+For verbose output:
 
 ```bash
-RUST_LOG=trace ffc
+ffc -v
 ```
 
 This will clean authority certificates of Chrome browser only:
