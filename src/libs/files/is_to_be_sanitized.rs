@@ -16,7 +16,7 @@ pub fn is_to_be_sanitized(filepath: &Path) -> Result<bool> where {
     let matched = is_there_a_match(reader)?;
 
     if matched == false {
-        trace!("Found no forticlient reference");
+        trace!("Found no forty client reference");
     }
 
     Ok(matched)

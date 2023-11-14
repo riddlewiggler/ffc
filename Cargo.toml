@@ -1,6 +1,6 @@
 [package]
 name = "ffc"
-version = "0.9.3"
+version = "0.9.5"
 edition = "2021"
 authors = ["riddlewiggler"]
 rust-version = "1.70"
