@@ -12,7 +12,7 @@ pub fn rewrite_file(source_file: &Path, temp_file: &Path) -> Result<bool> {
         anyhow!(msg)
     })?;
 
-    // Copying all lines from source to temp file but those containing forticlient
+    // Copying all lines from source to temp file but those containing forty client
     trace!("Creating temp file {}", temp_file.display());
     let out_file = File::create(temp_file).map_err(|e| {
         error!("{e}");

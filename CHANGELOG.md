@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - (patch) - [feature/86bwe8etf](https://app.clickup.com/t/86bwe8etf)
   - Change `build_logger helper` function return type
+- (patch) - [feature/86bwe8edj](https://app.clickup.com/t/86bwe8edj)
+  - Clean references in comments and logs
 
 ## [0.9.3] - 2023-11-13
 
