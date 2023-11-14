@@ -1,13 +1,12 @@
 use env_logger::Builder;
 use log::LevelFilter;
-use anyhow::Result;
 
 /// Build env_logger::Builder with `verbose` CLI arg support
 ///
 /// # Arguments
 ///
 /// * `is_verbose` - true if the verbose CLI arg is set
-pub fn build_logger(is_verbose: bool) -> Result<Builder> {
+pub fn build_logger(is_verbose: bool) -> Builder {
     let mut builder: Builder;
     if is_verbose == false {
         builder = Builder::from_default_env();
@@ -16,7 +15,7 @@ pub fn build_logger(is_verbose: bool) -> Result<Builder> {
         builder.filter_level(LevelFilter::max());
     }
 
-    Ok(builder)
+    builder
 }
 
 #[cfg(test)]
